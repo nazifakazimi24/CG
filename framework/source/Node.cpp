@@ -13,6 +13,7 @@ Node::Node() {
 
 }
 
+
 /**
  *
  * @return returns the parent of a node, nullptr if a node has no partent
@@ -27,18 +28,13 @@ std::shared_ptr<Node> Node::getParent() {
  * @return shared node pointer
  */
 std::shared_ptr<Node> Node::getChildren(std::string name) {
-
-    // iterate through each child of the node
     for (int i = 0; i < children_.size(); ++i) {
-
-        // if the name of the child matches the given name, return the child
         if (children_[i]->getName() == name) {
             return children_[i];
             // found the correct node with the given name
         }
     }
-
-    // if none of the children have the given name, check each child recursively
+    // check each child, if it has a child with the name
     std::shared_ptr<Node> found;
     for (int i = 0; i < children_.size(); ++i) {
         found = children_[i]->getChildren(name);
@@ -46,7 +42,6 @@ std::shared_ptr<Node> Node::getChildren(std::string name) {
             return found;
         }
     }
-
     // if we found no child with the name, we return a nullptr
     return nullptr;
 }
@@ -60,10 +55,7 @@ std::shared_ptr<Node> Node::removeChildren(std::string name) {
 
     std::shared_ptr<Node> child = nullptr;
 
-    // iterate through each child of the node
     for (int i = 0; i < children_.size(); ++i) {
-
-        // if the name of the child matches the given name, remove the child from the children list
         if (children_[i]->getName() == name) {
             child = children_[i];
             children_.erase(children_.begin() + i, children_.begin() + i + 1);
@@ -72,7 +64,6 @@ std::shared_ptr<Node> Node::removeChildren(std::string name) {
         }
     }
 
-    // if no child was found with the given name, return a nullptr
     return child;
 }
 
@@ -84,7 +75,6 @@ std::shared_ptr<Node> Node::removeChildren(std::string name) {
 std::vector<std::shared_ptr<Node>> Node::getChildrenList() {
     return children_;
 }
-
 /**
  * sets current parent to a given nodeptr
  * @param parenta
@@ -100,7 +90,6 @@ void Node::setParent(std::shared_ptr<Node> parenta) {
 void Node::setLocalTransform(const glm::fmat4 &localtransform) {
     localTransform_ = localtransform;
 }
-
 /**
  * sets the world transform to a given 4x4 matrix
  * @param localtransform
@@ -117,22 +106,40 @@ void Node::addChildren(std::shared_ptr<Node> child) {
     children_.push_back(child);
 }
 
-
 /**
  *
  * @return new transformation with rotated planet
  */
 glm::fmat4 Node::getLocalTransform() {
+    return localTransform_;
+}
+
+/**
+ * local transformation in regards to the worldtransformation of the parents
+ * @return
+ */
+glm::fmat4 Node::getWorldTransform() {
+    //return worldTransform;
+    if (parent_ != nullptr) {
+        return parent_->getWorldTransform() * calculateLocalTransform();
+    }
+    return localTransform_;
+}
+
+
+glm::fmat4 Node::calculateLocalTransform() {
     glm::fmat4 model_matrix = glm::fmat4{1.0};
     // rotation around the center (sun)
-    model_matrix = glm::rotate(glm::fmat4{}, float(glfwGetTime() * (name_.length() + 1)), glm::fvec3{0.0f, 1.0f, 0.0f});
+    model_matrix = glm::rotate(glm::fmat4{}, float(glfwGetTime() / (localTransform_[0][3]+1)), glm::fvec3{0.0f, 1.0f, 0.0f});
+
+    std::cout<<"value: " << localTransform_[0][3] << "\n";
 
     // translation
     model_matrix = glm::translate(model_matrix,
                                   glm::vec3(localTransform_[0][3], localTransform_[1][3], localTransform_[2][3]));
 
     // rotation around its axis
-    model_matrix = glm::rotate(model_matrix, float(glfwGetTime() * (name_.length() + 1)), glm::fvec3{0.0f, 1.0f, 0.0f});
+    model_matrix = glm::rotate(model_matrix, float(glfwGetTime()  / (localTransform_[0][3]+1)), glm::fvec3{0.0f, 1.0f, 0.0f});
 
     // Scaling
     model_matrix = model_matrix * glm::fmat4(localTransform_[0][0], localTransform_[0][1], localTransform_[0][2], 0,
@@ -146,17 +153,6 @@ glm::fmat4 Node::getLocalTransform() {
     return model_matrix;
 }
 
-/**
- * local transformation in regards to the worldtransformation of the parents
- * @return
- */
-glm::fmat4 Node::getWorldTransform() {
-    //return worldTransform;
-    if (parent_ != nullptr) {
-        return parent_->getWorldTransform() * getLocalTransform();
-    }
-    return localTransform_;
-}
 
 /**
  *
