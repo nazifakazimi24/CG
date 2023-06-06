@@ -52,19 +52,24 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     point_light->setParent(root);// set parent of point light
 
     point_light->setName("Light"); // for debugging
+    point_light->setIntensity(1.0f);
+    point_light->setColor(std::vector<float>{0.5f,0.5f,0.5f});
 
 
-
-
-    std::vector<std::string> names = {"Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus",
-                                      "Neptune", "Pluto"};
+    std::vector<std::string> names = {"Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"};
     // List with Names for all of our planets
     std::vector<float> distance = {0, 0.39f, 0.72f, 1.0f, 1.52f, 5.2f, 9.54f, 19.2f, 30.06f, 35}; // distance in Au
+
+    std::vector<std::vector<float>> color = {{1,1,1}, {1,0.9f,0.7f}, {1,0.7f,0}, {0.5f,0.5f,1}, {1,0,0.1f}, {1,0.6f,0.3f}, {0.8f,0.8f,0.4f}, {0.7f,0.7f,0.9f}, {0.4f,0.5f,0.8f}, {0.9f,0,0.2f}}; // distance in Au
+
+
 
     for (int i = 0; i < names.size(); ++i) {
 
         std::shared_ptr<GeometryNode> planet = std::make_shared<GeometryNode>(GeometryNode()); // initializing geometry node
 
+        planet->setColor(color[i]);
+        planet->setIntensity(1);
 
         std::shared_ptr<Node> planet_node = std::make_shared<Node>(Node()); // node which contains the geometry node as child
 
@@ -112,6 +117,9 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
 
     moon->setName("Moon"); // set the name for the moon (to draw it)
 
+
+    moon->setColor({1,1,0.7f});
+
     moon_node->setLocalTransform(glm::fmat4(0.3f, 0, 0, 3.3256957366f, // Moon 0.00256957366 Au
                                             0, 0.3f, 0, 0,
                                             0, 0, 0.3f, 0,
@@ -120,11 +128,9 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
 
     std::cout << sceneGraph_->printGraph() << "\n";
     // we print the graph of the solar system
-   // edits for assignment2
+
     load_planets();
-
     generate_trails();
-
     generate_stars();
 }
 
@@ -171,6 +177,17 @@ ApplicationSolar::~ApplicationSolar() {
 
 void ApplicationSolar::render() const {
 
+    glUseProgram(m_shaders.at("planet").handle);
+    for (int i = 0; i < planets_.size(); ++i) {
+        if (planets_[i]->getName() == "Light") { // we dont draw a planet or a ring if we have the light node
+            glm::mat4 light_transfrom = planets_[i]->getWorldTransform(); // transform matrix of the light
+            glUniform1f(m_shaders.at("planet").u_locs.at("light_intensity"),planets_[i]->getIntensity()); // intensity of the light
+            glUniform3f(m_shaders.at("planet").u_locs.at("light_pos"),light_transfrom[3][0],light_transfrom[3][1],light_transfrom[3][2]); // position of the light
+            glUniform3f(m_shaders.at("planet").u_locs.at("color_diffuse_"),0.5f,0.5f,0.5f); // diffuse color of the light (setting caused memory access violation error earlier)
+            glUniform3f(m_shaders.at("planet").u_locs.at("color_specular_"),1,1,1); // specular color of the light
+        }
+    }
+
     for (int i = 0; i < planets_.size(); ++i) {
         if (planets_[i]->getName() != "Light"){ // we dont draw a planet or a ring if we have the light node
 
@@ -185,18 +202,19 @@ void ApplicationSolar::render() const {
             glUniformMatrix4fv(m_shaders.at("planet").u_locs.at("ModelMatrix"),
                                1, GL_FALSE, glm::value_ptr(model_matrix));
 
-            // extra matrix for normal transformation to keep them orthogonal to surface
-            glm::fmat4 normal_matrix = glm::inverseTranspose(glm::inverse(m_view_transform) * model_matrix);
-            glUniformMatrix4fv(m_shaders.at("planet").u_locs.at("NormalMatrix"),
-                               1, GL_FALSE, glm::value_ptr(normal_matrix));
-
-
             // bind the VAO to draw
             glBindVertexArray(planets_[i]->getGeometry().vertex_AO);
 
+            std::vector<float> color = planets_[i]->getColor();
+
+            //std::cout<< "Color: " << color[0] <<" " << color[1] <<" " << color[2] << "\n";
+
+            glUniform3f(m_shaders.at("planet").u_locs.at("camera_position"),m_view_transform[3][0],m_view_transform[3][1],m_view_transform[3][2]);
+            glUniform3f(m_shaders.at("planet").u_locs.at("color_ambient_"),color[0],color[1],color[2]);
+
             // draw bound vertex array using bound shader
             glDrawElements(planets_[i]->getGeometry().draw_mode, planet_object.num_elements, model::INDEX.type, NULL);
-            // edits for assignment2 to add rings
+
 
 
             // Draw Trails for each Planet (not for the sun)
@@ -225,7 +243,7 @@ void ApplicationSolar::render() const {
 
 
                 if (planets_[i]->getName() == "Saturn"){
-                    int nr_rings = 7;
+                    int nr_rings = 10;
                     float inner_radius = 1.5f;
                     float outer_radius = 2.5f;
                     for (int j = 0; j < nr_rings; ++j) {
@@ -258,7 +276,7 @@ void ApplicationSolar::render() const {
     glBindVertexArray(stars_.vertex_AO);
     glDrawArrays(stars_.draw_mode, GLint(0), stars_.num_elements);
 }
-// edits for assignment2 to add shaders in view
+
 void ApplicationSolar::uploadView() {
     // bind shader to which to upload unforms
     glUseProgram(m_shaders.at("planet").handle);
@@ -308,17 +326,23 @@ void ApplicationSolar::initializeShaderPrograms() {
     m_shaders.emplace("planet", shader_program{{{GL_VERTEX_SHADER, m_resource_path + "shaders/simple.vert"},
                                                        {GL_FRAGMENT_SHADER, m_resource_path + "shaders/simple.frag"}}});
     // request uniform locations for shader program
-    m_shaders.at("planet").u_locs["NormalMatrix"] = -1;
     m_shaders.at("planet").u_locs["ModelMatrix"] = -1;
     m_shaders.at("planet").u_locs["ViewMatrix"] = -1;
     m_shaders.at("planet").u_locs["ProjectionMatrix"] = -1;
+
+    m_shaders.at("planet").u_locs["light_pos"] = -1;
+    m_shaders.at("planet").u_locs["light_intensity"] = -1;
+    m_shaders.at("planet").u_locs["color_ambient_"] = -1;
+    m_shaders.at("planet").u_locs["color_diffuse_"] = -1;
+    m_shaders.at("planet").u_locs["color_specular_"] = -1;
+    m_shaders.at("planet").u_locs["camera_position"] = -1;
+    m_shaders.at("planet").u_locs["toon_shading"] = -1;
 
 
     // store shader program objects in container
     m_shaders.emplace("star", shader_program{{{GL_VERTEX_SHADER, m_resource_path + "shaders/star.vert"},
                                                      {GL_FRAGMENT_SHADER, m_resource_path + "shaders/star.frag"}}});
     // request uniform locations for shader program
-    //m_shaders.at("star").u_locs["ModelMatrix"] = -1;
     m_shaders.at("star").u_locs["ViewMatrix"] = -1;
     m_shaders.at("star").u_locs["ProjectionMatrix"] = -1;
 
@@ -379,22 +403,28 @@ void ApplicationSolar::initializeGeometry() {
 ///////////////////////////// callback functions for window events ////////////
 // handle key input
 void ApplicationSolar::keyCallback(int key, int action, int mods) {
+    float speed = 0.1f;
     if (key == GLFW_KEY_W && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
         // moving ahead
-        m_view_transform = glm::translate(m_view_transform, glm::fvec3{0.0f, 0.0f, -0.1f});
-        uploadView();
-    } else if (key == GLFW_KEY_S && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        m_view_transform = glm::translate(m_view_transform, glm::fvec3{0.0f, 0.0f, -speed});
+    }  if (key == GLFW_KEY_S && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
         // moving backwards
-        m_view_transform = glm::translate(m_view_transform, glm::fvec3{0.0f, 0.0f, 0.1f});
-        uploadView();
-    } else if (key == GLFW_KEY_A && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        m_view_transform = glm::translate(m_view_transform, glm::fvec3{0.0f, 0.0f, speed});
+    }  if (key == GLFW_KEY_A && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
         // movement to the left
-        m_view_transform = glm::translate(m_view_transform, glm::fvec3{-0.1f, 0.0f, 0.0f});
-        uploadView();
-    } else if (key == GLFW_KEY_D && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        m_view_transform = glm::translate(m_view_transform, glm::fvec3{-speed, 0.0f, 0.0f});
+    }  if (key == GLFW_KEY_D && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
         // movement to the right
-        m_view_transform = glm::translate(m_view_transform, glm::fvec3{0.1f, 0.0f, 0.0f});
-        uploadView();
+        m_view_transform = glm::translate(m_view_transform, glm::fvec3{speed, 0.0f, 0.0f});
+    }
+    uploadView();
+    glUseProgram(m_shaders.at("planet").handle); // using the planet shader for setting boolean values
+    if (key == GLFW_KEY_1) {
+        // if 1 is pressed, we add the toon shading
+        glUniform1b(m_shaders.at("planet").u_locs.at("toon_shading"),true);
+    }else if (key == GLFW_KEY_2){
+        // if 2 is pressed, we only use the normal shading
+        glUniform1b(m_shaders.at("planet").u_locs.at("toon_shading"),false);
     }
 }
 
@@ -415,7 +445,7 @@ void ApplicationSolar::resizeCallback(unsigned width, unsigned height) {
     // upload new projection matrix
     uploadProjection();
 }
-// edits for assignment2 for generating stars
+
 void ApplicationSolar::generate_stars() {
 
 
@@ -450,7 +480,7 @@ void ApplicationSolar::generate_stars() {
         data.push_back(y);
         data.push_back(z);
 
-        float brightness = 0.4f;
+        float brightness = 0.0f;
 
         float r = (distribution(generator) * (1 - brightness) + brightness);
         float g = (distribution(generator) * (1 - brightness) + brightness);

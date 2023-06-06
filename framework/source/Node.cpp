@@ -13,7 +13,6 @@ Node::Node() {
 
 }
 
-
 /**
  *
  * @return returns the parent of a node, nullptr if a node has no partent
@@ -130,9 +129,9 @@ glm::fmat4 Node::getWorldTransform() {
 glm::fmat4 Node::calculateLocalTransform() {
     glm::fmat4 model_matrix = glm::fmat4{1.0};
     // rotation around the center (sun)
-    model_matrix = glm::rotate(glm::fmat4{}, float(glfwGetTime() / (localTransform_[0][3]+1)), glm::fvec3{0.0f, 1.0f, 0.0f});
+    model_matrix = glm::rotate(glm::fmat4{}, float((2 * 3.14 * glfwGetTime()) / pow(localTransform_[0][3]+1,3)), glm::fvec3{0.0f, 1.0f, 0.0f});
 
-    std::cout<<"value: " << localTransform_[0][3] << "\n";
+    //std::cout<<"value: " << localTransform_[0][3] << "\n";
 
     // translation
     model_matrix = glm::translate(model_matrix,
@@ -220,4 +219,37 @@ int Node::getDepth() {
  */
 void Node::setName(std::string name) {
     this->name_ = name;
+}
+
+/**
+ *
+ * @return color as vector with 3 values
+ * glm:vector?
+ */
+std::vector<float> Node::getColor() {
+    return lightColor_;
+}
+
+/**
+ * set the values of the color for the light
+ * @param color
+ */
+void Node::setColor(std::vector<float> color) {
+    lightColor_ = std::move(color);
+}
+
+/**
+ * getter for the brightness
+ * @return
+ */
+float Node::getIntensity() {
+    return lightIntensity_;
+}
+
+/**
+ * getter for the brightness
+ * @param brightness
+ */
+void Node::setIntensity(float intensity) {
+    lightIntensity_ = intensity;
 }
