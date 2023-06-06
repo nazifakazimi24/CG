@@ -8,6 +8,7 @@ class PointLightNode : public Node {
 
 public:
     std::vector<float> getColor();
+    //Assign3
     float getIntensity();
 
     void setIntensity(float intensity);

@@ -1,6 +1,7 @@
 #version 150
 
 in vec3 pass_Normal;
+// Assign3
 in vec4 pass_Position;
 
 uniform vec3 light_pos;
@@ -29,7 +30,8 @@ void main() {
     float angle_diffuse = max(dot(pass_Normal, L), 0.0f); // diffuse angle
     // light calculations:
     out_Color = vec4((color_ambient_ + light_intensity * color_diffuse_ * angle_diffuse) + light_intensity * color_specular_ * pow(angle_specular,30), 1.0);
-
+    // Assign3 
+    
     if (toon_shading){ // toon shading boolean
         float stroke_thickness = 0.4; // angle of grey area
         float normal_dir = dot(pass_Normal,V); // angle camera to point and normal

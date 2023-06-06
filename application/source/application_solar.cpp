@@ -52,7 +52,9 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     point_light->setParent(root);// set parent of point light
 
     point_light->setName("Light"); // for debugging
+    //Assign3
     point_light->setIntensity(1.0f);
+    //Assign3
     point_light->setColor(std::vector<float>{0.5f,0.5f,0.5f});
 
 
@@ -60,6 +62,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     // List with Names for all of our planets
     std::vector<float> distance = {0, 0.39f, 0.72f, 1.0f, 1.52f, 5.2f, 9.54f, 19.2f, 30.06f, 35}; // distance in Au
 
+    //Assign3
     std::vector<std::vector<float>> color = {{1,1,1}, {1,0.9f,0.7f}, {1,0.7f,0}, {0.5f,0.5f,1}, {1,0,0.1f}, {1,0.6f,0.3f}, {0.8f,0.8f,0.4f}, {0.7f,0.7f,0.9f}, {0.4f,0.5f,0.8f}, {0.9f,0,0.2f}}; // distance in Au
 
 
@@ -67,7 +70,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     for (int i = 0; i < names.size(); ++i) {
 
         std::shared_ptr<GeometryNode> planet = std::make_shared<GeometryNode>(GeometryNode()); // initializing geometry node
-
+        // Assign3
         planet->setColor(color[i]);
         planet->setIntensity(1);
 
@@ -117,7 +120,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
 
     moon->setName("Moon"); // set the name for the moon (to draw it)
 
-
+    // Assign3
     moon->setColor({1,1,0.7f});
 
     moon_node->setLocalTransform(glm::fmat4(0.3f, 0, 0, 3.3256957366f, // Moon 0.00256957366 Au
@@ -174,6 +177,7 @@ ApplicationSolar::~ApplicationSolar() {
     glDeleteVertexArrays(1, &stars_.vertex_AO);
 
 }
+//Assign3
 
 void ApplicationSolar::render() const {
 
@@ -204,11 +208,11 @@ void ApplicationSolar::render() const {
 
             // bind the VAO to draw
             glBindVertexArray(planets_[i]->getGeometry().vertex_AO);
-
+            // Assign3
             std::vector<float> color = planets_[i]->getColor();
 
             //std::cout<< "Color: " << color[0] <<" " << color[1] <<" " << color[2] << "\n";
-
+            // Assign3
             glUniform3f(m_shaders.at("planet").u_locs.at("camera_position"),m_view_transform[3][0],m_view_transform[3][1],m_view_transform[3][2]);
             glUniform3f(m_shaders.at("planet").u_locs.at("color_ambient_"),color[0],color[1],color[2]);
 
@@ -236,13 +240,14 @@ void ApplicationSolar::render() const {
                                    1, GL_FALSE, glm::value_ptr(model_matrix));
 
 
-                model_object ring = planets_[i]->getTrail();//　花
+                model_object ring = planets_[i]->getTrail();
                 // bind the VAO to draw
                 glBindVertexArray(ring.vertex_AO);
                 glDrawArrays(ring.draw_mode, GLint(0), ring.num_elements);
 
 
                 if (planets_[i]->getName() == "Saturn"){
+                    //Assign3
                     int nr_rings = 10;
                     float inner_radius = 1.5f;
                     float outer_radius = 2.5f;
@@ -330,11 +335,14 @@ void ApplicationSolar::initializeShaderPrograms() {
     m_shaders.at("planet").u_locs["ViewMatrix"] = -1;
     m_shaders.at("planet").u_locs["ProjectionMatrix"] = -1;
 
+    // Assign3
     m_shaders.at("planet").u_locs["light_pos"] = -1;
+    // Assign3
     m_shaders.at("planet").u_locs["light_intensity"] = -1;
     m_shaders.at("planet").u_locs["color_ambient_"] = -1;
     m_shaders.at("planet").u_locs["color_diffuse_"] = -1;
     m_shaders.at("planet").u_locs["color_specular_"] = -1;
+    // Assign3
     m_shaders.at("planet").u_locs["camera_position"] = -1;
     m_shaders.at("planet").u_locs["toon_shading"] = -1;
 
@@ -419,6 +427,7 @@ void ApplicationSolar::keyCallback(int key, int action, int mods) {
     }
     uploadView();
     glUseProgram(m_shaders.at("planet").handle); // using the planet shader for setting boolean values
+    //Assign3
     if (key == GLFW_KEY_1) {
         // if 1 is pressed, we add the toon shading
         glUniform1b(m_shaders.at("planet").u_locs.at("toon_shading"),true);
@@ -480,6 +489,7 @@ void ApplicationSolar::generate_stars() {
         data.push_back(y);
         data.push_back(z);
 
+        // Assign3
         float brightness = 0.0f;
 
         float r = (distribution(generator) * (1 - brightness) + brightness);

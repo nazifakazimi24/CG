@@ -38,7 +38,7 @@ public:
 
     std::vector<float> getColor();
     float getIntensity();
-
+    //Assign3
     void setIntensity(float intensity);
     void setColor(std::vector<float> color);
 
@@ -50,7 +50,7 @@ protected:
     int depth_ = 1;
     glm::fmat4 localTransform_ = glm::fmat4(1.0);
     glm::fmat4 worldTransform_ = glm::fmat4(1.0);
-
+    // Assign3
     std::vector<float> lightColor_ = {}; // private variable for the color
     float lightIntensity_ = 1;
 

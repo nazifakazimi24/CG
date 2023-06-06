@@ -138,6 +138,7 @@ glm::fmat4 Node::calculateLocalTransform() {
                                   glm::vec3(localTransform_[0][3], localTransform_[1][3], localTransform_[2][3]));
 
     // rotation around its axis
+    // Assign3 
     model_matrix = glm::rotate(model_matrix, float(glfwGetTime()  / (localTransform_[0][3]+1)), glm::fvec3{0.0f, 1.0f, 0.0f});
 
     // Scaling
@@ -222,7 +223,7 @@ void Node::setName(std::string name) {
 }
 
 /**
- *
+ * Assign3: additional attribute for light color and light intensity 
  * @return color as vector with 3 values
  * glm:vector?
  */
@@ -231,6 +232,7 @@ std::vector<float> Node::getColor() {
 }
 
 /**
+ * Assign3
  * set the values of the color for the light
  * @param color
  */
@@ -239,6 +241,7 @@ void Node::setColor(std::vector<float> color) {
 }
 
 /**
+ * Assign3
  * getter for the brightness
  * @return
  */
@@ -247,6 +250,7 @@ float Node::getIntensity() {
 }
 
 /**
+ * Assign3
  * getter for the brightness
  * @param brightness
  */
