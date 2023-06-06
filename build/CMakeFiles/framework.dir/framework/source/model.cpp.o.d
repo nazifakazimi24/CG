@@ -1,11 +1,10 @@
 CMakeFiles/framework.dir/framework/source/model.cpp.o: \
- /home/jason/Dokumente/weimar/uni/ss23/test/CG/framework/source/model.cpp \
- /usr/include/stdc-predef.h \
- /home/jason/Dokumente/weimar/uni/ss23/test/CG/framework/include/model.hpp \
- /home/jason/Dokumente/weimar/uni/ss23/test/CG/external/glbinding-2.1.1/source/glbinding/include/glbinding/gl/types.h \
- /home/jason/Dokumente/weimar/uni/ss23/test/CG/external/glbinding-2.1.1/source/glbinding/include/glbinding/nogl.h \
- /home/jason/Dokumente/weimar/uni/ss23/test/CG/build/external/glbinding-2.1.1/source/glbinding/include/glbinding/glbinding_api.h \
- /home/jason/Dokumente/weimar/uni/ss23/test/CG/external/glbinding-2.1.1/source/glbinding/include/glbinding/gl/boolean.h \
+ /home/diro7061/CG/framework/source/model.cpp /usr/include/stdc-predef.h \
+ /home/diro7061/CG/framework/include/model.hpp \
+ /home/diro7061/CG/external/glbinding-2.1.1/source/glbinding/include/glbinding/gl/types.h \
+ /home/diro7061/CG/external/glbinding-2.1.1/source/glbinding/include/glbinding/nogl.h \
+ /home/diro7061/CG/build/external/glbinding-2.1.1/source/glbinding/include/glbinding/glbinding_api.h \
+ /home/diro7061/CG/external/glbinding-2.1.1/source/glbinding/include/glbinding/gl/boolean.h \
  /usr/include/c++/11/functional \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -162,4 +161,4 @@ CMakeFiles/framework.dir/framework/source/model.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/jason/Dokumente/weimar/uni/ss23/test/CG/external/glbinding-2.1.1/source/glbinding/include/glbinding/gl/enum.h
+ /home/diro7061/CG/external/glbinding-2.1.1/source/glbinding/include/glbinding/gl/enum.h

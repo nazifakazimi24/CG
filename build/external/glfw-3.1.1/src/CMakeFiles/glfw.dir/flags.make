@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/home/jason/Dokumente/weimar/uni/ss23/test/CG/external/tinyobjloader-aa07206 -I/home/jason/Dokumente/weimar/uni/ss23/test/CG/external/glfw-3.1.1/src -I/home/jason/Dokumente/weimar/uni/ss23/test/CG/build/external/glfw-3.1.1/src -isystem /home/jason/Dokumente/weimar/uni/ss23/test/CG/external/glm-0.9.6.3 -isystem /home/jason/Dokumente/weimar/uni/ss23/test/CG/external/stb_image-2.0.6
+C_INCLUDES = -I/home/diro7061/CG/external/tinyobjloader-aa07206 -I/home/diro7061/CG/external/glfw-3.1.1/src -I/home/diro7061/CG/build/external/glfw-3.1.1/src -isystem /home/diro7061/CG/external/glm-0.9.6.3 -isystem /home/diro7061/CG/external/stb_image-2.0.6
 
 C_FLAGS = -g -fPIC   -Wall
 

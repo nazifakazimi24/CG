@@ -1,4 +1,4 @@
-prefix=/home/jason/Dokumente/weimar/uni/ss23/test/CG/install
+prefix=/home/diro7061/CG/install
 exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib
