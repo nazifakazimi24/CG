@@ -1,8 +1,8 @@
-# Install script for directory: /home/diro7061/CG/external/glfw-3.1.1
+# Install script for directory: /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/diro7061/CG/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/diro7061/CG/build/external/glfw-3.1.1/src/cmake_install.cmake")
+  include("/home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glfw-3.1.1/src/cmake_install.cmake")
 
 endif()
 

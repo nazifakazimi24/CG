@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diro7061/CG
+CMAKE_SOURCE_DIR = /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diro7061/CG/build
+CMAKE_BINARY_DIR = /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/diro7061/CG/build/CMakeFiles /home/diro7061/CG/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/diro7061/CG/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

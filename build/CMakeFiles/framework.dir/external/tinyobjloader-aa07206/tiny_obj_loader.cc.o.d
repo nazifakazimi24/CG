@@ -1,5 +1,5 @@
 CMakeFiles/framework.dir/external/tinyobjloader-aa07206/tiny_obj_loader.cc.o: \
- /home/diro7061/CG/external/tinyobjloader-aa07206/tiny_obj_loader.cc \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/tinyobjloader-aa07206/tiny_obj_loader.cc \
  /usr/include/stdc-predef.h /usr/include/c++/11/cstdlib \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -175,4 +175,4 @@ CMakeFiles/framework.dir/external/tinyobjloader-aa07206/tiny_obj_loader.cc.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc \
- /home/diro7061/CG/external/tinyobjloader-aa07206/tiny_obj_loader.h
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/tinyobjloader-aa07206/tiny_obj_loader.h

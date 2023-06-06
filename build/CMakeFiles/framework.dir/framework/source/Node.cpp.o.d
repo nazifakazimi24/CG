@@ -1,6 +1,8 @@
 CMakeFiles/framework.dir/framework/source/Node.cpp.o: \
- /home/diro7061/CG/framework/source/Node.cpp /usr/include/stdc-predef.h \
- /home/diro7061/CG/framework/include/Node.hpp /usr/include/c++/11/string \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/Node.cpp \
+ /usr/include/stdc-predef.h \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/include/Node.hpp \
+ /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -130,10 +132,10 @@ CMakeFiles/framework.dir/framework/source/Node.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat4x4.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/fwd.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_int.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/setup.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat4x4.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/fwd.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_int.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/setup.hpp \
  /usr/include/c++/11/cassert /usr/include/assert.h \
  /usr/include/c++/11/cstddef \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
@@ -141,14 +143,14 @@ CMakeFiles/framework.dir/framework/source/Node.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
  /usr/include/c++/11/stdlib.h \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_float.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/precision.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec4.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec4.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_float.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/precision.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec4.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec4.inl \
  /usr/include/c++/11/limits \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat4x4.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat4x4.inl \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
@@ -187,24 +189,24 @@ CMakeFiles/framework.dir/framework/source/Node.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/gtc/matrix_transform.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat4x4.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/vec2.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec2.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec2.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/vec3.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec3.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec3.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/vec4.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/gtc/constants.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/gtc/constants.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/gtc/matrix_transform.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/geometric.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_geometric.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_geometric.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_exponential.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec1.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_vec1.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/gtc/matrix_transform.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat4x4.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/vec2.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec2.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec2.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/vec3.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec3.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec3.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/vec4.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/gtc/constants.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/gtc/constants.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/gtc/matrix_transform.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/geometric.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_geometric.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_geometric.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_exponential.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec1.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_vec1.inl \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -215,43 +217,43 @@ CMakeFiles/framework.dir/framework/source/Node.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_exponential.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_vector_relational.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_vector_relational.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/_vectorize.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_common.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/_fixes.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_common.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/trigonometric.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_trigonometric.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_trigonometric.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/matrix.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_matrix.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat2x2.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat2x2.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat2x2.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat2x3.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat2x3.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat2x3.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat2x4.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat2x4.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat2x4.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat3x2.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat3x2.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat3x2.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat3x3.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat3x3.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat3x3.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat3x4.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat3x4.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat3x4.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat4x2.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat4x2.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat4x2.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/mat4x3.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat4x3.hpp \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/type_mat4x3.inl \
- /home/diro7061/CG/external/glm-0.9.6.3/glm/detail/func_matrix.inl \
- /home/diro7061/CG/external/glfw-3.1.1/include/GLFW/glfw3.h \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_exponential.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_vector_relational.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_vector_relational.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/_vectorize.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_common.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/_fixes.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_common.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/trigonometric.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_trigonometric.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_trigonometric.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/matrix.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_matrix.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat2x2.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat2x2.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat2x2.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat2x3.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat2x3.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat2x3.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat2x4.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat2x4.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat2x4.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat3x2.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat3x2.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat3x2.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat3x3.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat3x3.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat3x3.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat3x4.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat3x4.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat3x4.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat4x2.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat4x2.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat4x2.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/mat4x3.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat4x3.hpp \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/type_mat4x3.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glm-0.9.6.3/glm/detail/func_matrix.inl \
+ /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/include/GLFW/glfw3.h \
  /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h
