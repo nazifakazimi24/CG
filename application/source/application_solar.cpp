@@ -129,7 +129,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
                                             0, 0, 0, 1));
 
 
-    std::cout << sceneGraph_->printGraph() << "\n";
+    //std::cout << sceneGraph_->printGraph() << "\n";
     // we print the graph of the solar system
 
     load_planets();
@@ -581,10 +581,10 @@ void ApplicationSolar::generate_trails() {
 
         planets_[i]->setTrail(ring_object);
 
-        std::cout << ring_object.vertex_AO << "\n";
-        std::cout << ring_object.vertex_BO << "\n";
-        std::cout << ring_object.num_elements << "\n";
-        std::cout << ring_object.element_BO << "\n";
+//         std::cout << ring_object.vertex_AO << "\n";
+//         std::cout << ring_object.vertex_BO << "\n";
+//         std::cout << ring_object.num_elements << "\n";
+//         std::cout << ring_object.element_BO << "\n";
     }
 }
 
