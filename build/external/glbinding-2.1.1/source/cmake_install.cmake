@@ -1,8 +1,8 @@
-# Install script for directory: /home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glbinding-2.1.1/source
+# Install script for directory: /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glbinding-2.1.1/source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/install")
+  set(CMAKE_INSTALL_PREFIX "/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,12 +43,12 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glbinding-2.1.1/source/include/glbinding")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glbinding-2.1.1/source/include/glbinding")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glbinding-2.1.1/source/glbinding/cmake_install.cmake")
+  include("/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glbinding-2.1.1/source/glbinding/cmake_install.cmake")
 
 endif()
 

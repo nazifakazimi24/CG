@@ -1,4 +1,4 @@
-prefix=/home/jason/Dokumente/weimar/uni/ss23/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/install
+prefix=/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/install
 exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib
