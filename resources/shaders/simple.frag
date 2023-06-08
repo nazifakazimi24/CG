@@ -33,11 +33,11 @@ void main() {
     // Assign3 
     
     if (toon_shading){ // toon shading boolean
-        float stroke_thickness = 0.4; // angle of grey area
-        float normal_dir = dot(pass_Normal,V); // angle camera to point and normal
-        if (normal_dir < stroke_thickness){ // if we have a point on the edge, we paint it grey
-            out_Color = vec4(0.5f,0.5f,0.5f,1); // outline color
-        }
+//         float stroke_thickness = 0.4; // angle of grey area
+//         float normal_dir = dot(pass_Normal,V); // angle camera to point and normal
+//         if (normal_dir < stroke_thickness){ // if we have a point on the edge, we paint it grey
+//             out_Color = vec4(0.5f,0.5f,0.5f,1); // outline color
+//         }
 
         float layers = 5.0f; // total number of colors between 0 and 1
         out_Color *= layers; // scale from 0 1 to value from 0 to total nr of colors
