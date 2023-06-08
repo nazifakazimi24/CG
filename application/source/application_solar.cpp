@@ -247,7 +247,6 @@ void ApplicationSolar::render() const {
 
 
                 if (planets_[i]->getName() == "Saturn"){
-                    //Assign3
                     int nr_rings = 10;
                     float inner_radius = 1.5f;
                     float outer_radius = 2.5f;
