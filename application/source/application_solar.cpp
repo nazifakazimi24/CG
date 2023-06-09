@@ -335,12 +335,10 @@ void ApplicationSolar::initializeShaderPrograms() {
 
     // Assign3
     m_shaders.at("planet").u_locs["light_pos"] = -1;
-    // Assign3
     m_shaders.at("planet").u_locs["light_intensity"] = -1;
     m_shaders.at("planet").u_locs["color_ambient_"] = -1;
     m_shaders.at("planet").u_locs["color_diffuse_"] = -1;
     m_shaders.at("planet").u_locs["color_specular_"] = -1;
-    // Assign3
     m_shaders.at("planet").u_locs["camera_position"] = -1;
     m_shaders.at("planet").u_locs["toon_shading"] = -1;
 
