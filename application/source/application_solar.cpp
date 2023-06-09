@@ -54,7 +54,6 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     point_light->setName("Light"); // for debugging
     //Assign3
     point_light->setIntensity(1.0f);
-    //Assign3
     point_light->setColor(std::vector<float>{0.5f,0.5f,0.5f});
 
 
@@ -488,7 +487,7 @@ void ApplicationSolar::generate_stars() {
         data.push_back(y);
         data.push_back(z);
 
-        // Assign3
+        
         float brightness = 0.0f;
 
         float r = (distribution(generator) * (1 - brightness) + brightness);
