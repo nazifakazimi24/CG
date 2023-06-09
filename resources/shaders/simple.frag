@@ -33,7 +33,7 @@ void main() {
     // Assign3 
     
     if (toon_shading){ // toon shading boolean
-        float layers = 5.0f; // total number of colors between 0 and 1
+        float layers = 5.0f; // total number of colors between 0 and 5
         out_Color *= layers; // scale from 0 1 to value from 0 to total nr of colors
         out_Color[0] = int(out_Color[0]) / layers; // converion to int and then division by total nr of colors for value between 0 and 1
         out_Color[1] = int(out_Color[1]) / layers; // converion to int and then division by total nr of colors for value between 0 and 1
