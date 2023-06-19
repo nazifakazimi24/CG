@@ -331,4 +331,10 @@ CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o: \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
  /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
- /usr/include/c++/11/bits/stl_numeric.h
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/include/texture_loader.hpp \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/include/pixel_data.hpp \
+ /usr/include/c++/11/fstream /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc
