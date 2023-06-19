@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886
+CMAKE_SOURCE_DIR = /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build
+CMAKE_BINARY_DIR = /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/solar_system.dir/depend.make
@@ -72,86 +72,86 @@ include CMakeFiles/solar_system.dir/flags.make
 CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o: CMakeFiles/solar_system.dir/flags.make
 CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o: ../application/source/application_solar.cpp
 CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o: CMakeFiles/solar_system.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o -MF CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o.d -o CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o -c /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/application/source/application_solar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o -MF CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o.d -o CMakeFiles/solar_system.dir/application/source/application_solar.cpp.o -c /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/application/source/application_solar.cpp
 
 CMakeFiles/solar_system.dir/application/source/application_solar.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solar_system.dir/application/source/application_solar.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/application/source/application_solar.cpp > CMakeFiles/solar_system.dir/application/source/application_solar.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/application/source/application_solar.cpp > CMakeFiles/solar_system.dir/application/source/application_solar.cpp.i
 
 CMakeFiles/solar_system.dir/application/source/application_solar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solar_system.dir/application/source/application_solar.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/application/source/application_solar.cpp -o CMakeFiles/solar_system.dir/application/source/application_solar.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/application/source/application_solar.cpp -o CMakeFiles/solar_system.dir/application/source/application_solar.cpp.s
 
 CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o: CMakeFiles/solar_system.dir/flags.make
 CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o: ../framework/source/SceneGraph.cpp
 CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o: CMakeFiles/solar_system.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o -c /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/SceneGraph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.o -c /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/SceneGraph.cpp
 
 CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/SceneGraph.cpp > CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/SceneGraph.cpp > CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.i
 
 CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/SceneGraph.cpp -o CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/SceneGraph.cpp -o CMakeFiles/solar_system.dir/framework/source/SceneGraph.cpp.s
 
 CMakeFiles/solar_system.dir/framework/source/Node.cpp.o: CMakeFiles/solar_system.dir/flags.make
 CMakeFiles/solar_system.dir/framework/source/Node.cpp.o: ../framework/source/Node.cpp
 CMakeFiles/solar_system.dir/framework/source/Node.cpp.o: CMakeFiles/solar_system.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/solar_system.dir/framework/source/Node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/Node.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/Node.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/Node.cpp.o -c /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/solar_system.dir/framework/source/Node.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/Node.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/Node.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/Node.cpp.o -c /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/Node.cpp
 
 CMakeFiles/solar_system.dir/framework/source/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solar_system.dir/framework/source/Node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/Node.cpp > CMakeFiles/solar_system.dir/framework/source/Node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/Node.cpp > CMakeFiles/solar_system.dir/framework/source/Node.cpp.i
 
 CMakeFiles/solar_system.dir/framework/source/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solar_system.dir/framework/source/Node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/Node.cpp -o CMakeFiles/solar_system.dir/framework/source/Node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/Node.cpp -o CMakeFiles/solar_system.dir/framework/source/Node.cpp.s
 
 CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o: CMakeFiles/solar_system.dir/flags.make
 CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o: ../framework/source/GeometryNode.cpp
 CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o: CMakeFiles/solar_system.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o -c /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/GeometryNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.o -c /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/GeometryNode.cpp
 
 CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/GeometryNode.cpp > CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/GeometryNode.cpp > CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.i
 
 CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/GeometryNode.cpp -o CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/GeometryNode.cpp -o CMakeFiles/solar_system.dir/framework/source/GeometryNode.cpp.s
 
 CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o: CMakeFiles/solar_system.dir/flags.make
 CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o: ../framework/source/CameraNode.cpp
 CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o: CMakeFiles/solar_system.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o -c /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/CameraNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.o -c /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/CameraNode.cpp
 
 CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/CameraNode.cpp > CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/CameraNode.cpp > CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.i
 
 CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/CameraNode.cpp -o CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/CameraNode.cpp -o CMakeFiles/solar_system.dir/framework/source/CameraNode.cpp.s
 
 CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o: CMakeFiles/solar_system.dir/flags.make
 CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o: ../framework/source/PointLightNode.cpp
 CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o: CMakeFiles/solar_system.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o -c /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/PointLightNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o -MF CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o.d -o CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.o -c /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/PointLightNode.cpp
 
 CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/PointLightNode.cpp > CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/PointLightNode.cpp > CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.i
 
 CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/PointLightNode.cpp -o CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/PointLightNode.cpp -o CMakeFiles/solar_system.dir/framework/source/PointLightNode.cpp.s
 
 # Object files for target solar_system
 solar_system_OBJECTS = \
@@ -186,7 +186,7 @@ Debug/solar_system: /usr/lib/x86_64-linux-gnu/libm.so
 Debug/solar_system: /usr/lib/x86_64-linux-gnu/libXcursor.so
 Debug/solar_system: /usr/lib/x86_64-linux-gnu/libGL.so
 Debug/solar_system: CMakeFiles/solar_system.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Debug/solar_system"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Debug/solar_system"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/solar_system.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -198,6 +198,6 @@ CMakeFiles/solar_system.dir/clean:
 .PHONY : CMakeFiles/solar_system.dir/clean
 
 CMakeFiles/solar_system.dir/depend:
-	cd /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886 /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886 /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles/solar_system.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886 /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886 /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles/solar_system.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/solar_system.dir/depend
 
