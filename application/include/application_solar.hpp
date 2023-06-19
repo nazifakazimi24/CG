@@ -37,7 +37,8 @@ public:
 
 protected:
     void load_planets();
-
+    
+    void load_textures();
 
     void generate_stars();
 
