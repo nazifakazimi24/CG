@@ -36,6 +36,7 @@ public:
 
 protected:
     void load_planets();
+    //Assign4
 
     void load_textures();
 
@@ -56,8 +57,6 @@ protected:
 
     // upload view matrix
     void uploadView();
-
-    void loadSkyboxTextures(std::string name);
 
     // cpu representation of model
     model_object planet_object;
