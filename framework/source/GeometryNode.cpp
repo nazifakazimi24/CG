@@ -27,6 +27,7 @@ model_object GeometryNode::getTrail() {
 void GeometryNode::setTrail(model_object model) {
     trail_ = model;
 }
+//Assign4
 void GeometryNode::setTexture(texture_object texture) {
     texture_ = texture;
 }

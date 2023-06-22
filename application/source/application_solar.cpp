@@ -221,6 +221,7 @@ void ApplicationSolar::render() const {
             
              // bind the VAO to draw
             glBindVertexArray(planet_object.vertex_AO);
+            //Assign4
 
             texture_object texture = planets_[i]->getTexture();
 
@@ -280,7 +281,7 @@ void ApplicationSolar::render() const {
                         glUniformMatrix4fv(m_shaders.at("ring").u_locs.at("ModelMatrix"),
                                            1, GL_FALSE, glm::value_ptr(model_matrix));
 
-                        model_object ring = planets_[i]->getTrail();//　花
+                        model_object ring = planets_[i]->getTrail();//　
                         // bind the VAO to draw
                         glBindVertexArray(ring.vertex_AO);
                         glDrawArrays(ring.draw_mode, GLint(0), ring.num_elements);
@@ -361,8 +362,9 @@ void ApplicationSolar::initializeShaderPrograms() {
     // Assign3
     m_shaders.at("planet").u_locs["camera_position"] = -1;
     m_shaders.at("planet").u_locs["toon_shading"] = -1;
+    //Assign4
     m_shaders.at("planet").u_locs["texture_"] = -1;
-    //m_shaders.at("planet").u_locs["texture_normal"] = -1;
+
 
 
     // store shader program objects in container
@@ -605,6 +607,7 @@ void ApplicationSolar::generate_trails() {
 //         std::cout << ring_object.element_BO << "\n";
     }
 }
+//Assign4
 void ApplicationSolar::load_textures() {
 
 
