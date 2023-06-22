@@ -30,6 +30,7 @@ void main() {
     float angle_specular = max(dot(H, pass_Normal), 0.0f); // specular angle
     float angle_diffuse = max(dot(pass_Normal, L), 0.0f); // diffuse angle
     // light calculations:
+    //Assign4
     vec2 horizontal = normalize(vec2(pass_Normal[0],pass_Normal_planet[2]));
 
     float hor = atan(dot(horizontal,vec2(0,1)),horizontal[0])/(3.142f * 2) + 0.5f;
