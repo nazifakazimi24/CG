@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886
+CMAKE_SOURCE_DIR = /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build
+CMAKE_BINARY_DIR = /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glfw-3.1.1//CMakeFiles/progress.marks
-	cd /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/glfw-3.1.1/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles 0
+	cd /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glfw-3.1.1//CMakeFiles/progress.marks
+	cd /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/glfw-3.1.1/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/glfw-3.1.1/clean
+	cd /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/glfw-3.1.1/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,17 +148,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/glfw-3.1.1/preinstall
+	cd /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/glfw-3.1.1/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/glfw-3.1.1/preinstall
+	cd /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/glfw-3.1.1/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -184,6 +184,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

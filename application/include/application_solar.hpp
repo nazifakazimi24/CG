@@ -7,6 +7,7 @@
 #include "../../framework/include/Node.hpp"
 #include "../../framework/include/SceneGraph.hpp"
 
+
 // gpu representation of model
 class ApplicationSolar : public Application {
 public:
@@ -36,8 +37,6 @@ public:
 
 protected:
     void load_planets();
-    //Assign4
-
     void load_textures();
 
     void generate_stars();
@@ -66,6 +65,8 @@ protected:
     // camera projection matrix
     glm::fmat4 m_view_projection;
     // root Node (contains camera)
+
+
 };
 
 #endif

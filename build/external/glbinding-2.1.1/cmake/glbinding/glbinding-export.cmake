@@ -47,7 +47,7 @@ add_library(glbinding::glbinding STATIC IMPORTED)
 set_target_properties(glbinding::glbinding PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "\$<\$<NOT:\$<BOOL:OFF>>:GLBINDING_STATIC_DEFINE>;SYSTEM_LINUX"
   INTERFACE_COMPILE_OPTIONS "\$<\$<PLATFORM_ID:Darwin>:;-pthread;>;\$<\$<VERSION_LESS:3.22.1,3.1>:;-std=c++11;>"
-  INTERFACE_INCLUDE_DIRECTORIES "/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glbinding-2.1.1/source/glbinding/include;/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glbinding-2.1.1/source/glbinding/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glbinding-2.1.1/source/glbinding/include;/home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glbinding-2.1.1/source/glbinding/include"
   INTERFACE_LINK_LIBRARIES "/usr/lib/x86_64-linux-gnu/libGL.so;/usr/lib/x86_64-linux-gnu/libGLU.so;-pthread"
 )
 
@@ -55,7 +55,7 @@ set_target_properties(glbinding::glbinding PROPERTIES
 set_property(TARGET glbinding::glbinding APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(glbinding::glbinding PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LOCATION_DEBUG "/home/diro7061/test/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glbinding-2.1.1/libglbindingd.a"
+  IMPORTED_LOCATION_DEBUG "/home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glbinding-2.1.1/libglbindingd.a"
   )
 
 # This file does not depend on other imported targets which have

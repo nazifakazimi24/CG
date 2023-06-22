@@ -1,4 +1,5 @@
 #include "GeometryNode.hpp"
+
 /**
  *
  * @returns the geometry of a planet
@@ -26,19 +27,10 @@ model_object GeometryNode::getTrail() {
 void GeometryNode::setTrail(model_object model) {
     trail_ = model;
 }
-
 void GeometryNode::setTexture(texture_object texture) {
     texture_ = texture;
 }
 
 texture_object GeometryNode::getTexture() {
     return texture_;
-}
-
-void GeometryNode::setTextureNormal(texture_object texture) {
-    texture_normal_ = texture;
-}
-
-texture_object GeometryNode::getTextureNormal() {
-    return texture_normal_;
 }

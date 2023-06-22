@@ -1,7 +1,6 @@
 #ifndef OPENGLFRAMEWORK_GEOMETRYNODE_H
 #define OPENGLFRAMEWORK_GEOMETRYNODE_H
 
-
 #include <structs.hpp>
 #include "Node.hpp"
 
@@ -13,18 +12,13 @@ public:
 
     model_object getTrail();
     void setTrail(model_object model);
-
     void setTexture(texture_object texture);
     texture_object getTexture();
-
-    void setTextureNormal(texture_object texture);
-    texture_object getTextureNormal();
 
 private:
     model_object geometry_;
     model_object trail_;
     texture_object texture_;
-    texture_object texture_normal_;
 
 };
 

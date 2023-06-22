@@ -9,6 +9,8 @@
 #include "../../framework/include/SceneGraph.hpp"
 #include "../../framework/include/PointLightNode.hpp"
 
+   
+
 #include <glbinding/gl/gl.h>
 // use gl definitions from glbinding 
 using namespace gl;
@@ -25,8 +27,6 @@ using namespace gl;
 #include <iostream>
 #include <random>
 #include <texture_loader.hpp>
-#include <fstream>
-
 
 ApplicationSolar::ApplicationSolar(std::string const &resource_path)
         : Application{resource_path}, planet_object{},
@@ -52,7 +52,9 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     point_light->setParent(root);// set parent of point light
 
     point_light->setName("Light"); // for debugging
+    //Assign3
     point_light->setIntensity(1.0f);
+    //Assign3
     point_light->setColor(std::vector<float>{0.5f,0.5f,0.5f});
 
 
@@ -60,6 +62,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     // List with Names for all of our planets
     std::vector<float> distance = {0, 0.39f, 0.72f, 1.0f, 1.52f, 5.2f, 9.54f, 19.2f, 30.06f, 35}; // distance in Au
 
+    //Assign3
     std::vector<std::vector<float>> color = {{1,1,1}, {1,0.9f,0.7f}, {1,0.7f,0}, {0.5f,0.5f,1}, {1,0,0.1f}, {1,0.6f,0.3f}, {0.8f,0.8f,0.4f}, {0.7f,0.7f,0.9f}, {0.4f,0.5f,0.8f}, {0.9f,0,0.2f}}; // distance in Au
 
 
@@ -67,7 +70,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     for (int i = 0; i < names.size(); ++i) {
 
         std::shared_ptr<GeometryNode> planet = std::make_shared<GeometryNode>(GeometryNode()); // initializing geometry node
-
+        // Assign3
         planet->setColor(color[i]);
         planet->setIntensity(1);
 
@@ -117,7 +120,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
 
     moon->setName("Moon"); // set the name for the moon (to draw it)
 
-
+    // Assign3
     moon->setColor({1,1,0.7f});
 
     moon_node->setLocalTransform(glm::fmat4(0.3f, 0, 0, 3.3256957366f, // Moon 0.00256957366 Au
@@ -132,9 +135,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     load_planets();
     generate_trails();
     generate_stars();
-    //Assign4
     load_textures();
-    std::cout<<"Textures loaded!"<<"\n";
 }
 
 
@@ -177,6 +178,7 @@ ApplicationSolar::~ApplicationSolar() {
     glDeleteVertexArrays(1, &stars_.vertex_AO);
 
 }
+//Assign3
 
 void ApplicationSolar::render() const {
 
@@ -186,11 +188,11 @@ void ApplicationSolar::render() const {
             glm::mat4 light_transfrom = planets_[i]->getWorldTransform(); // transform matrix of the light
             glUniform1f(m_shaders.at("planet").u_locs.at("light_intensity"),planets_[i]->getIntensity()); // intensity of the light
             glUniform3f(m_shaders.at("planet").u_locs.at("light_pos"),light_transfrom[3][0],light_transfrom[3][1],light_transfrom[3][2]); // position of the light
-            //glUniform3f(m_shaders.at("planet").u_locs.at("color_diffuse_"),0.5f,0.5f,0.5f); // diffuse color of the light (setting caused memory access violation error earlier)
+            glUniform3f(m_shaders.at("planet").u_locs.at("color_diffuse_"),0.5f,0.5f,0.5f); // diffuse color of the light (setting caused memory access violation error earlier)
             glUniform3f(m_shaders.at("planet").u_locs.at("color_specular_"),1,1,1); // specular color of the light
         }
     }
-    int count = 0;
+    int count = 0 ; 
     for (int i = 0; i < planets_.size(); ++i) {
         if (planets_[i]->getName() != "Light"){ // we dont draw a planet or a ring if we have the light node
 
@@ -198,10 +200,6 @@ void ApplicationSolar::render() const {
             glUseProgram(m_shaders.at("planet").handle);
             // loop over all planets, draw each one
 
-            glUniform1b(m_shaders.at("planet").u_locs.at("sun"),false);
-            if (planets_[i]->getName() == "Sun"){
-                glUniform1b(m_shaders.at("planet").u_locs.at("sun"),true);
-            }
             glm::fmat4 model_matrix = planets_[i]->getWorldTransform(); // the model matrix will return the matrix with our world transform
             // -> more calculations than necessary, but its simpler to implement
 
@@ -211,20 +209,18 @@ void ApplicationSolar::render() const {
 
             // bind the VAO to draw
             glBindVertexArray(planet_object.vertex_AO);
-
+            // Assign3
             std::vector<float> color = planets_[i]->getColor();
 
             //std::cout<< "Color: " << color[0] <<" " << color[1] <<" " << color[2] << "\n";
-
+            // Assign3
             glUniform3f(m_shaders.at("planet").u_locs.at("camera_position"),m_view_transform[3][0],m_view_transform[3][1],m_view_transform[3][2]);
-            //glUniform3f(m_shaders.at("planet").u_locs.at("color_ambient_"),color[0],color[1],color[2]);
+            glUniform3f(m_shaders.at("planet").u_locs.at("color_ambient_"),color[0],color[1],color[2]);
 
             // draw bound vertex array using bound shader
-
-
-            // bind the VAO to draw
+            
+             // bind the VAO to draw
             glBindVertexArray(planet_object.vertex_AO);
-            //Assign4
 
             texture_object texture = planets_[i]->getTexture();
 
@@ -234,21 +230,9 @@ void ApplicationSolar::render() const {
             count++;
             glBindTexture(texture.target, texture.handle);
             // add sampler
-
-            glUniform1i(glGetUniformLocation(m_shaders.at("planet").handle, "texture_"), texture.handle);
-
-
-            texture_object texture_normal = planets_[i]->getTextureNormal();
-
-            //std::cout<< "Planet: " << planets_[i]->getName()<<"\n";
-
-            glActiveTexture(GL_TEXTURE1 + count);
-            count++;
-            glBindTexture(texture_normal.target, texture_normal.handle);
-            // add sampler
-
-            glUniform1i(glGetUniformLocation(m_shaders.at("planet").handle, "texture_normal"), texture_normal.handle);
-
+            GLint sampler_location = glGetUniformLocation(m_shaders.at("planet").handle, "texture_");
+            glUniform1i(sampler_location, texture.handle);
+            
             glDrawElements(planets_[i]->getGeometry().draw_mode, planet_object.num_elements, model::INDEX.type, NULL);
 
 
@@ -264,7 +248,7 @@ void ApplicationSolar::render() const {
                 float dist = (float) sqrt(pow(local[0][3],2) + pow(local[1][3],2) + pow(local[2][3],2)); // distance to the origin of rotation (dist to planet it rotates around)
 
                 glUniform1f(m_shaders.at("ring").u_locs.at("dist"),dist); // distance from the planet to its origin of rotation
-                glUniform1f(m_shaders.at("ring").u_locs.at("angle"),-float((0.02f * 3.14 * glfwGetTime()) / pow(local[0][3]+1,3)));
+
 
 
                 model_matrix = planets_[i]->getParent()->getParent()->getWorldTransform(); // world transform of the parent planet = parent parent nodes world transform
@@ -272,13 +256,14 @@ void ApplicationSolar::render() const {
                                    1, GL_FALSE, glm::value_ptr(model_matrix));
 
 
-                model_object ring = planets_[i]->getTrail();//　花
+                model_object ring = planets_[i]->getTrail();
                 // bind the VAO to draw
                 glBindVertexArray(ring.vertex_AO);
                 glDrawArrays(ring.draw_mode, GLint(0), ring.num_elements);
 
 
                 if (planets_[i]->getName() == "Saturn"){
+                    //Assign3
                     int nr_rings = 10;
                     float inner_radius = 1.5f;
                     float outer_radius = 2.5f;
@@ -304,15 +289,13 @@ void ApplicationSolar::render() const {
             }
         }
     }
+
+
     glUseProgram(m_shaders.at("star").handle);
 
     // bind the VAO to draw
     glBindVertexArray(stars_.vertex_AO);
     glDrawArrays(stars_.draw_mode, GLint(0), stars_.num_elements);
-
-/**/
-
-    //glDepthMask(GL_TRUE);
 }
 
 void ApplicationSolar::uploadView() {
@@ -331,8 +314,6 @@ void ApplicationSolar::uploadView() {
     glUseProgram(m_shaders.at("ring").handle);
     glUniformMatrix4fv(m_shaders.at("ring").u_locs.at("ViewMatrix"),
                        1, GL_FALSE, glm::value_ptr(view_matrix));
-
-  
 }
 
 void ApplicationSolar::uploadProjection() {
@@ -349,7 +330,6 @@ void ApplicationSolar::uploadProjection() {
     glUseProgram(m_shaders.at("ring").handle);
     glUniformMatrix4fv(m_shaders.at("ring").u_locs.at("ProjectionMatrix"),
                        1, GL_FALSE, glm::value_ptr(m_view_projection));
-
 }
 
 // update uniform locations
@@ -371,15 +351,18 @@ void ApplicationSolar::initializeShaderPrograms() {
     m_shaders.at("planet").u_locs["ViewMatrix"] = -1;
     m_shaders.at("planet").u_locs["ProjectionMatrix"] = -1;
 
+    // Assign3
     m_shaders.at("planet").u_locs["light_pos"] = -1;
+    // Assign3
     m_shaders.at("planet").u_locs["light_intensity"] = -1;
+    m_shaders.at("planet").u_locs["color_ambient_"] = -1;
+    m_shaders.at("planet").u_locs["color_diffuse_"] = -1;
     m_shaders.at("planet").u_locs["color_specular_"] = -1;
+    // Assign3
     m_shaders.at("planet").u_locs["camera_position"] = -1;
     m_shaders.at("planet").u_locs["toon_shading"] = -1;
-    m_shaders.at("planet").u_locs["sun"] = -1;
-    //Assign4
     m_shaders.at("planet").u_locs["texture_"] = -1;
-    m_shaders.at("planet").u_locs["texture_normal"] = -1;
+    //m_shaders.at("planet").u_locs["texture_normal"] = -1;
 
 
     // store shader program objects in container
@@ -399,8 +382,6 @@ void ApplicationSolar::initializeShaderPrograms() {
     m_shaders.at("ring").u_locs["ViewMatrix"] = -1;
     m_shaders.at("ring").u_locs["ProjectionMatrix"] = -1;
     m_shaders.at("ring").u_locs["dist"] = -1;
-    m_shaders.at("ring").u_locs["angle"] = -1;
-
 
 }
 
@@ -443,7 +424,7 @@ void ApplicationSolar::initializeGeometry() {
     planet_object.draw_mode = GL_TRIANGLES;
     // transfer number of indices to model object
     planet_object.num_elements = GLsizei(planet_model.indices.size());
-    }
+}
 
 ///////////////////////////// callback functions for window events ////////////
 // handle key input
@@ -464,6 +445,7 @@ void ApplicationSolar::keyCallback(int key, int action, int mods) {
     }
     uploadView();
     glUseProgram(m_shaders.at("planet").handle); // using the planet shader for setting boolean values
+    //Assign3
     if (key == GLFW_KEY_1) {
         // if 1 is pressed, we add the toon shading
         glUniform1b(m_shaders.at("planet").u_locs.at("toon_shading"),true);
@@ -525,6 +507,7 @@ void ApplicationSolar::generate_stars() {
         data.push_back(y);
         data.push_back(z);
 
+        // Assign3
         float brightness = 0.0f;
 
         float r = (distribution(generator) * (1 - brightness) + brightness);
@@ -565,7 +548,7 @@ void ApplicationSolar::generate_trails() {
     model_object ring_object;
     std::vector<GLfloat> data;
 
-    int resolution = 1000;
+    int resolution = 100;
     data.reserve(resolution * 6 * sizeof(float));
 
     for (int i = 0; i < resolution; ++i) {
@@ -582,9 +565,9 @@ void ApplicationSolar::generate_trails() {
 
         //float brightness = 0.4f;
 
-        float r = 1-(float) i / (float) resolution;
-        float g = 1-(float) i / (float) resolution;
-        float b = 1-(float) i / (float) resolution;
+        float r = 1;//(float) i / (float) resolution;
+        float g = 1;//(float) i / (float) resolution;
+        float b = 1;//(float) i / (float) resolution;
 
         // Color
         data.push_back(r);
@@ -616,27 +599,25 @@ void ApplicationSolar::generate_trails() {
 
         planets_[i]->setTrail(ring_object);
 
-        //std::cout << ring_object.vertex_AO << "\n";
-        //std::cout << ring_object.vertex_BO << "\n";
-        //std::cout << ring_object.num_elements << "\n";
-        //std::cout << ring_object.element_BO << "\n";
+//         std::cout << ring_object.vertex_AO << "\n";
+//         std::cout << ring_object.vertex_BO << "\n";
+//         std::cout << ring_object.num_elements << "\n";
+//         std::cout << ring_object.element_BO << "\n";
     }
 }
-
-//Assign4
 void ApplicationSolar::load_textures() {
 
-    int count = 0;
+
     for (int i = 0; i < planets_.size(); i++) {
         if (planets_[i]->getName() != "Light") {
+
             std::cout<< "Loading planet: " << planets_[i]->getName() << "\n";
             pixel_data planet_texture = texture_loader::file(m_resource_path + "textures/" + planets_[i]->getName() + ".png");
             //pixel_data planet_texture = texture_loader::file(m_resource_path + "textures/Mars_normal.png");
 
             GLenum channel_type = planet_texture.channel_type;
 
-            glActiveTexture(GL_TEXTURE1 + count);
-            count++;
+            glActiveTexture(GL_TEXTURE1 + i);
             texture_object texture;
             glGenTextures(1, &texture.handle);
             texture.target = GL_TEXTURE_2D;
@@ -653,47 +634,12 @@ void ApplicationSolar::load_textures() {
 
             glTexImage2D(GL_TEXTURE_2D, 0, planet_texture.channels, (GLsizei) planet_texture.width, (GLsizei) planet_texture.height,
                          0, planet_texture.channels, channel_type, planet_texture.ptr());
-            std::cout<<"Loading normals\n";
-/**/
-            pixel_data normal_texture;
-
-            std::ifstream inputFile(m_resource_path + "textures/" + planets_[i]->getName() + "_normal.png");
-
-            if (inputFile.good()) {
-                normal_texture = texture_loader::file(m_resource_path + "textures/" + planets_[i]->getName() + "_normal.png");
-            } else {
-                normal_texture = texture_loader::file(m_resource_path + "textures/Empty_normal.png");
-            }
-
-
-            glActiveTexture(GL_TEXTURE1 + count);
-            count++;
-            texture_object texture_normal;
-            glGenTextures(1, &texture_normal.handle);
-            texture_normal.target = GL_TEXTURE_2D;
-
-            planets_[i]->setTextureNormal(texture_normal);
-
-            glBindTexture(texture_normal.target, texture_normal.handle);
-
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-            glTexImage2D(GL_TEXTURE_2D, 0, normal_texture.channels, (GLsizei) normal_texture.width, (GLsizei) normal_texture.height,
-                         0, normal_texture.channels, normal_texture.channel_type, normal_texture.ptr());
-
-
-
+            std::cout<<"Setting texture\n";
         }
     }
-
-
 }
 
-
+// exe entry point
 int main(int argc, char *argv[]) {
     Application::run<ApplicationSolar>(argc, argv, 3, 2);
 }
