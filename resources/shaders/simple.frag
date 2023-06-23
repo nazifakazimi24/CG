@@ -33,8 +33,9 @@ void main() {
     //Assign4
     vec2 horizontal = normalize(vec2(pass_Normal[0],pass_Normal_planet[2]));
 
-    float hor = atan(dot(horizontal,vec2(0,1)),horizontal[0])/(3.142f * 2) + 0.5f;
-    float ver = asin(pass_Normal_planet.y)/3.142f + 0.5f;
+    //represents a normalized horizontal texture coordinate that ranges from 0.5 to 1.5.
+    float hor = atan(dot(horizontal,vec2(0,1)),horizontal[0])/(3.142f * 2) + 0.5f; 
+    float ver = asin(pass_Normal_planet.y)/3.142f + 0.5f; vertical texture coordinate, 
     vec4 color = texture(texture_,vec2(hor,ver));
 
     out_Color = vec4((color.rgb + light_intensity * color_diffuse_ * angle_diffuse) + light_intensity * color_specular_ * pow(angle_specular,30), 1.0);
