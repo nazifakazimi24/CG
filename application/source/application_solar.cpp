@@ -135,7 +135,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     load_planets();
     generate_trails();
     generate_stars();
-    load_textures();
+    load_textures(); //Assign4
 }
 
 
@@ -224,8 +224,6 @@ void ApplicationSolar::render() const {
             //Assign4
 
             texture_object texture = planets_[i]->getTexture();
-
-            //std::cout<< "Planet: " << planets_[i]->getName()<<"\n";
 
             glActiveTexture(GL_TEXTURE1 + count);
             count++;
@@ -618,19 +616,20 @@ void ApplicationSolar::load_textures() {
             pixel_data planet_texture = texture_loader::file(m_resource_path + "textures/" + planets_[i]->getName() + ".png");
             //pixel_data planet_texture = texture_loader::file(m_resource_path + "textures/Mars_normal.png");
 
-            GLenum channel_type = planet_texture.channel_type;
+            GLenum channel_type = planet_texture.channel_type; 
 
-            glActiveTexture(GL_TEXTURE1 + i);
+            glActiveTexture(GL_TEXTURE1 + i); // Activating texture unit separately based on count
             texture_object texture;
-            glGenTextures(1, &texture.handle);
-            texture.target = GL_TEXTURE_2D;
+            glGenTextures(1, &texture.handle); // generates one or more texture object names and assigns them to the provided variable.
+            texture.target = GL_TEXTURE_2D; // 
 
             planets_[i]->setTexture(texture);
 
-            glBindTexture(texture.target, texture.handle);
-
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+            glBindTexture(texture.target, texture.handle); // binds the generated texture handle to the specified target
+           
+            // Handling texture wrapping behavior outside the range [0,1] for texture coordinate
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);// horizental
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);// Vertical
 
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
