@@ -1,8 +1,8 @@
 CMakeFiles/framework.dir/framework/source/texture_loader.cpp.o: \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/texture_loader.cpp \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/source/texture_loader.cpp \
  /usr/include/stdc-predef.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/include/texture_loader.hpp \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/include/pixel_data.hpp \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/include/texture_loader.hpp \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/framework/include/pixel_data.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -52,8 +52,8 @@ CMakeFiles/framework.dir/framework/source/texture_loader.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glbinding-2.1.1/source/glbinding/include/glbinding/gl/enum.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glbinding-2.1.1/source/glbinding/include/glbinding/nogl.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glbinding-2.1.1/source/glbinding/include/glbinding/gl/enum.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glbinding-2.1.1/source/glbinding/include/glbinding/nogl.h \
  /usr/include/c++/11/string /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/char_traits.h \
  /usr/include/c++/11/bits/postypes.h /usr/include/c++/11/cwchar \
@@ -132,7 +132,7 @@ CMakeFiles/framework.dir/framework/source/texture_loader.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/stb_image-2.0.6/stb_image.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/stb_image-2.0.6/stb_image.h \
  /usr/include/c++/11/stdlib.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/assert.h /usr/include/c++/11/cstring \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/exception \

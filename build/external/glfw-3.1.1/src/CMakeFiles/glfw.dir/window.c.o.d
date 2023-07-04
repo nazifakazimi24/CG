@@ -1,11 +1,11 @@
 external/glfw-3.1.1/src/CMakeFiles/glfw.dir/window.c.o: \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/window.c \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/window.c \
  /usr/include/stdc-predef.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/internal.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glfw-3.1.1/src/glfw_config.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/../include/GLFW/glfw3.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/internal.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/build/external/glfw-3.1.1/src/glfw_config.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/../include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h /usr/include/GL/gl.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/../deps/GL/glext.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/../deps/GL/glext.h \
  /usr/include/inttypes.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -22,7 +22,7 @@ external/glfw-3.1.1/src/CMakeFiles/glfw.dir/window.c.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/x11_platform.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/x11_platform.h \
  /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -94,7 +94,7 @@ external/glfw-3.1.1/src/CMakeFiles/glfw.dir/window.c.o: \
  /usr/include/X11/extensions/xfixeswire.h \
  /usr/include/X11/extensions/xf86vmode.h /usr/include/X11/Xmd.h \
  /usr/include/X11/extensions/xf86vm.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/posix_tls.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/posix_tls.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
@@ -108,13 +108,13 @@ external/glfw-3.1.1/src/CMakeFiles/glfw.dir/window.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/glx_context.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/glx_context.h \
  /usr/include/GL/glx.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/../deps/GL/glxext.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/posix_time.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/linux_joystick.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/../deps/GL/glxext.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/posix_time.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/linux_joystick.h \
  /usr/include/regex.h \
- /home/diro7061/new/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/xkb_unicode.h \
+ /home/diro7061/CGLab_JasonBrockmeyer11686_NazifaKazimi1236886/external/glfw-3.1.1/src/xkb_unicode.h \
  /usr/include/string.h /usr/include/strings.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
