@@ -134,7 +134,8 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     generate_stars();
     load_textures();
     std::cout<<"Textures loaded!"<<"\n";
-    generate_framebuffer(640,480);
+    //Assign5
+    generate_framebuffer(640,480); 
     generate_screen();
 }
 
@@ -182,7 +183,7 @@ ApplicationSolar::~ApplicationSolar() {
 void ApplicationSolar::render() const {
 
     ////////////////////////////////////////////////////////////////////////////////////
-
+    //Assign5
     glUseProgram(m_shaders.at("framebuffer").handle);
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_object_.handle);
     glClearColor(0.1f,0.1f,0.1f, 1.0f);
@@ -307,7 +308,7 @@ void ApplicationSolar::render() const {
     glDrawArrays(stars_.draw_mode, GLint(0), stars_.num_elements);
 
     /////////////////////////////////////////////////////////////////////////////////
-
+    //Assign5
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glClearColor(1.0f,1.0f,1.0f,1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -343,6 +344,7 @@ void ApplicationSolar::uploadView() {
     glUseProgram(m_shaders.at("ring").handle);
     glUniformMatrix4fv(m_shaders.at("ring").u_locs.at("ViewMatrix"),
                        1, GL_FALSE, glm::value_ptr(view_matrix));
+    //Assign5
     glUseProgram(m_shaders.at("framebuffer").handle);
     glUniform2f(m_shaders.at("framebuffer").u_locs.at("textureSize"),screen_width,screen_height);
 }
