@@ -391,7 +391,6 @@ void ApplicationSolar::initializeShaderPrograms() {
     m_shaders.at("planet").u_locs["toon_shading"] = -1;
     m_shaders.at("planet").u_locs["sun"] = -1;
     m_shaders.at("planet").u_locs["texture_"] = -1;
-    m_shaders.at("planet").u_locs["texture_normal"] = -1;
 
 
     // store shader program objects in container
@@ -413,7 +412,7 @@ void ApplicationSolar::initializeShaderPrograms() {
     m_shaders.at("ring").u_locs["dist"] = -1;
     m_shaders.at("ring").u_locs["angle"] = -1;
 
-
+     //Assign5
     //store quad shader for working with extra framebuffer
     m_shaders.emplace("framebuffer", shader_program{{{GL_VERTEX_SHADER, m_resource_path + "shaders/framebuffer.vert"},
                                                      {GL_FRAGMENT_SHADER, m_resource_path + "shaders/framebuffer.frag"}}});
@@ -492,11 +491,11 @@ void ApplicationSolar::keyCallback(int key, int action, int mods) {
     }else if (key == GLFW_KEY_2){
         // if 2 is pressed, we only use the normal shading
         glUniform1b(m_shaders.at("planet").u_locs.at("toon_shading"),false);
-    }else if(key == GLFW_KEY_7 && action == GLFW_PRESS){
+    }else if(key == GLFW_KEY_7 && action == GLFW_PRESS){ //Assign5
         glUseProgram(m_shaders.at("framebuffer").handle);
         post_processing_effects_[0] = !post_processing_effects_[0];
         glUniform1b(m_shaders.at("framebuffer").u_locs.at("luminance_preserving_greyscale"),post_processing_effects_[0]);
-    }else if (key == GLFW_KEY_8 && action == GLFW_PRESS){
+    }else if (key == GLFW_KEY_8 && action == GLFW_PRESS){ // 
         glUseProgram(m_shaders.at("framebuffer").handle);
         post_processing_effects_[1] = !post_processing_effects_[1];
         glUniform1b(m_shaders.at("framebuffer").u_locs.at("horizontal_mirroring"),post_processing_effects_[1]);
@@ -528,6 +527,7 @@ void ApplicationSolar::resizeCallback(unsigned width, unsigned height) {
     m_view_projection = utils::calculate_projection_matrix(float(width) / float(height));
     // upload new projection matrix
     uploadProjection();
+        //Assign5
     generate_framebuffer(width, height);
 }
 
@@ -697,7 +697,7 @@ void ApplicationSolar::load_textures() {
         }
     }
 }
-
+//Assign5
 bool ApplicationSolar::generate_framebuffer(unsigned width, unsigned height) {
 
     std::cout<<"width: " << width << "\n";
@@ -750,7 +750,7 @@ bool ApplicationSolar::generate_framebuffer(unsigned width, unsigned height) {
     glBindFramebuffer(GL_FRAMEBUFFER,0);
     return true;
 }
-
+//Assign5
 void ApplicationSolar::generate_screen(){
     // Generates the screen object with texturecoordinates and position
 
