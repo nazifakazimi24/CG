@@ -35,7 +35,7 @@ public:
 
     model_object stars_;
     //Assign5
-    model_object screenquad_object;
+    model_object full_screenquad_;
 
     //framebuffer_object framebuffer_obj;
 
@@ -48,6 +48,7 @@ protected:
     void generate_trails();
     //Assign5
     void generate_screen();
+
 
 
     void initializeShaderPrograms();
@@ -66,11 +67,13 @@ protected:
     // cpu representation of model
     model_object planet_object;
     //Assign5
-    bool initialize_framebuffer(unsigned width, unsigned height);
+    bool generate_framebuffer(unsigned width, unsigned height);
 
     unsigned screen_width;
     unsigned screen_height;
-    framebuffer_object framebuffer_obj;
+    framebuffer_object framebuffer_object_;
+
+    std::vector<GLboolean> post_processing_effects_ = {false, false, false, false};
     
     // camera transform matrix
     glm::fmat4 m_view_transform;

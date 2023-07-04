@@ -137,7 +137,7 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     generate_stars();
     load_textures(); 
     //Assign5
-    initialize_framebuffer(640,480);
+    generate_framebuffer(640,480);
     generate_screen();
 }
 
@@ -187,10 +187,11 @@ void ApplicationSolar::render() const {
     //Assign5
     ////////////////////////////////////////////////////////////////////////////////////
 
-    //glUseProgram(m_shaders.at("framebuffer").handle);
-    //glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_obj.handle);
-    //glClearColor(0.1f,0.1f,0.1f, 1.0f);
-    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glUseProgram(m_shaders.at("framebuffer").handle);
+    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_object_.handle);
+    glClearColor(0.1f,0.1f,0.1f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
     ////////////////////////////////////////////////////////////////////////////////////
 
     glUseProgram(m_shaders.at("planet").handle);
@@ -308,7 +309,23 @@ void ApplicationSolar::render() const {
     glDrawArrays(stars_.draw_mode, GLint(0), stars_.num_elements);
     
     //Assign5
-    
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    glClearColor(1.0f,1.0f,1.0f,1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+
+    glUseProgram(m_shaders.at("framebuffer").handle);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D,framebuffer_object_.texture_obj.handle);
+
+    glUniform1i(glGetUniformLocation(m_shaders.at("framebuffer").handle,"screenTexture"),0);
+
+    // set texture coordinates
+    glBindVertexArray(full_screenquad_.vertex_AO);
+    glDrawArrays(full_screenquad_.draw_mode, 0, full_screenquad_.num_elements);
+
+    /////////////////////////////////////////////////////////////////////////////////////
 }
 
 void ApplicationSolar::uploadView() {
@@ -327,6 +344,10 @@ void ApplicationSolar::uploadView() {
     glUseProgram(m_shaders.at("ring").handle);
     glUniformMatrix4fv(m_shaders.at("ring").u_locs.at("ViewMatrix"),
                        1, GL_FALSE, glm::value_ptr(view_matrix));
+
+    //Assign5
+    glUseProgram(m_shaders.at("framebuffer").handle);
+    glUniform2f(m_shaders.at("framebuffer").u_locs.at("textureSize"),screen_width,screen_height);
 }
 
 void ApplicationSolar::uploadProjection() {
@@ -466,6 +487,12 @@ void ApplicationSolar::keyCallback(int key, int action, int mods) {
     }else if (key == GLFW_KEY_2){
         // if 2 is pressed, we only use the normal shading
         glUniform1b(m_shaders.at("planet").u_locs.at("toon_shading"),false);
+    }else if (key == GLFW_KEY_8){ //Assign5
+        glUseProgram(m_shaders.at("framebuffer").handle);
+        glUniform1b(m_shaders.at("framebuffer").u_locs.at("greyscale"),true);
+    }else if (key == GLFW_KEY_9){
+        glUseProgram(m_shaders.at("framebuffer").handle);
+        glUniform1b(m_shaders.at("framebuffer").u_locs.at("greyscale"),false);
     }
 }
 
@@ -485,6 +512,7 @@ void ApplicationSolar::resizeCallback(unsigned width, unsigned height) {
     m_view_projection = utils::calculate_projection_matrix(float(width) / float(height));
     // upload new projection matrix
     uploadProjection();
+    generate_framebuffer(width, height); //Assign5
 }
 
 void ApplicationSolar::generate_stars() {
@@ -654,6 +682,99 @@ void ApplicationSolar::load_textures() {
         }
     }
 }
+//Assign5
+
+bool ApplicationSolar::generate_framebuffer(unsigned width, unsigned height) {
+
+    std::cout<<"width: " << width << "\n";
+    std::cout<<"height: " << height << "\n";
+
+    screen_width = width;
+    screen_height = height;
+
+    //generate framebuffer
+    glGenFramebuffers(1, &framebuffer_object_.handle);
+    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_object_.handle);
+
+    //create texture attachment as color_attachment
+    texture_object texture;
+    glActiveTexture(GL_TEXTURE0);
+    glGenTextures(1,&texture.handle);
+    glBindTexture(GL_TEXTURE_2D, texture.handle);
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height,0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture.handle, 0);
+
+    framebuffer_object_.texture_obj = texture; // setting the texture with the new width and height as the texture for our framebuffer
+
+    //create renderbuffer attachment (depth attachment)
+    unsigned int renderbuffer_object;
+    glGenRenderbuffers(1, &renderbuffer_object);
+    glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer_object);
+
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
+
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, renderbuffer_object);
+
+    framebuffer_object_.renderbuffer_handle = renderbuffer_object;
+    glBindRenderbuffer(GL_RENDERBUFFER, 0);
+
+    GLenum drawBuffers[1] = {GL_COLOR_ATTACHMENT0};
+    glDrawBuffers(1,drawBuffers);
+
+    if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+    {
+        std::cout<<"framebuffer could not get initialized\n";
+        return false;
+    }
+    glBindFramebuffer(GL_FRAMEBUFFER,0);
+    return true;
+}
+
+void ApplicationSolar::generate_screen(){
+    // Generates the screen object with texturecoordinates and position
+
+
+    //create texture coordinates
+    // Source: https://riptutorial.com/opengl/example/23675/basics-of-framebuffers
+    std::vector<GLfloat> quad = {
+            // positions        texture coordinates
+            -1.0f,  1.0f,       0.0f, 1.0f, // fist triangle
+            -1.0f, -1.0f,       0.0f, 0.0f,
+            1.0f, -1.0f,        1.0f, 0.0f,
+
+            -1.0f,  1.0f,       0.0f, 1.0f, // second triangle
+            1.0f, -1.0f,        1.0f, 0.0f,
+            1.0f,  1.0f,        1.0f, 1.0f
+    }; // (x + 1) / 2
+
+    //create a new VertexArray
+    glGenVertexArrays(1, &full_screenquad_.vertex_AO);
+    glBindVertexArray(full_screenquad_.vertex_AO);
+
+    //generate a new Buffer and bind it to the new VertexArray
+    glGenBuffers(1, &full_screenquad_.vertex_BO);
+    glBindBuffer(GL_ARRAY_BUFFER, full_screenquad_.vertex_BO);
+    //specify the size of the data
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float)*quad.size(), quad.data(), GL_STATIC_DRAW);
+
+    // first attribArray for positions
+    glEnableVertexAttribArray(0); // positions of the triangle vertices
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, GLsizei(4 * sizeof(float)), 0);
+    glEnableVertexAttribArray(1); // texture coordinates of the triangle vertices
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, GLsizei(4 * sizeof(float)), (void*)(2 * sizeof(float)));
+
+    //specify the draw mode and the number of elements
+    full_screenquad_.draw_mode = GL_TRIANGLE_STRIP;
+    full_screenquad_.num_elements = GLsizei(quad.size()/4); // 6 points for 2 triangles
+
+    }
 
 // exe entry point
 int main(int argc, char *argv[]) {
