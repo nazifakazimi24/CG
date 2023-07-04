@@ -34,6 +34,10 @@ public:
     std::vector<std::shared_ptr<GeometryNode>> planets_;
 
     model_object stars_;
+    //Assign5
+    model_object screenquad_object;
+
+    //framebuffer_object framebuffer_obj;
 
 protected:
     void load_planets();
@@ -42,6 +46,8 @@ protected:
     void generate_stars();
 
     void generate_trails();
+    //Assign5
+    void generate_screen();
 
 
     void initializeShaderPrograms();
@@ -59,7 +65,13 @@ protected:
 
     // cpu representation of model
     model_object planet_object;
+    //Assign5
+    bool initialize_framebuffer(unsigned width, unsigned height);
 
+    unsigned screen_width;
+    unsigned screen_height;
+    framebuffer_object framebuffer_obj;
+    
     // camera transform matrix
     glm::fmat4 m_view_transform;
     // camera projection matrix

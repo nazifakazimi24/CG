@@ -135,7 +135,10 @@ ApplicationSolar::ApplicationSolar(std::string const &resource_path)
     load_planets();
     generate_trails();
     generate_stars();
-    load_textures(); //Assign4
+    load_textures(); 
+    //Assign5
+    initialize_framebuffer(640,480);
+    generate_screen();
 }
 
 
@@ -181,6 +184,14 @@ ApplicationSolar::~ApplicationSolar() {
 //Assign3
 
 void ApplicationSolar::render() const {
+    //Assign5
+    ////////////////////////////////////////////////////////////////////////////////////
+
+    //glUseProgram(m_shaders.at("framebuffer").handle);
+    //glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_obj.handle);
+    //glClearColor(0.1f,0.1f,0.1f, 1.0f);
+    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    ////////////////////////////////////////////////////////////////////////////////////
 
     glUseProgram(m_shaders.at("planet").handle);
     for (int i = 0; i < planets_.size(); ++i) {
@@ -295,6 +306,9 @@ void ApplicationSolar::render() const {
     // bind the VAO to draw
     glBindVertexArray(stars_.vertex_AO);
     glDrawArrays(stars_.draw_mode, GLint(0), stars_.num_elements);
+    
+    //Assign5
+    
 }
 
 void ApplicationSolar::uploadView() {
